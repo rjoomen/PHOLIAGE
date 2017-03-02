@@ -1,0 +1,439 @@
+object MainForm: TMainForm
+  Left = 909
+  Height = 725
+  Top = 308
+  Width = 789
+  Caption = 'PHOLIAGE'
+  ClientHeight = 725
+  ClientWidth = 789
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.6.2.0'
+  object PageControl1: TPageControl
+    Left = 9
+    Height = 681
+    Top = 8
+    Width = 769
+    ActivePage = Model
+    TabIndex = 0
+    TabOrder = 1
+    object Model: TTabSheet
+      Caption = 'Data file mode'
+      ClientHeight = 653
+      ClientWidth = 759
+      object SelectFileButton: TButton
+        Left = 19
+        Height = 25
+        Top = 22
+        Width = 89
+        Caption = 'Select file'
+        OnClick = SelectFileButtonClick
+        TabOrder = 0
+      end
+      object FilenameEdit: TEdit
+        Left = 19
+        Height = 31
+        Top = 53
+        Width = 326
+        BidiMode = bdRightToLeft
+        Enabled = False
+        ParentBidiMode = False
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object CountLabeledEdit: TLabeledEdit
+        Left = 19
+        Height = 31
+        Top = 104
+        Width = 85
+        EditLabel.AnchorSideLeft.Control = CountLabeledEdit
+        EditLabel.AnchorSideRight.Control = CountLabeledEdit
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = CountLabeledEdit
+        EditLabel.Left = 19
+        EditLabel.Height = 14
+        EditLabel.Top = 87
+        EditLabel.Width = 85
+        EditLabel.Caption = 'Number of plants'
+        EditLabel.ParentColor = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object MainRunButton: TButton
+        Left = 19
+        Height = 25
+        Top = 252
+        Width = 222
+        Caption = 'Run'
+        OnClick = MainRunButtonClick
+        TabOrder = 3
+      end
+      object ProgressBar1: TProgressBar
+        Left = 19
+        Height = 17
+        Top = 283
+        Width = 262
+        Step = 1
+        TabOrder = 4
+      end
+      object TimeLabeledEdit: TLabeledEdit
+        Left = 287
+        Height = 17
+        Top = 283
+        Width = 34
+        AutoSize = False
+        EditLabel.AnchorSideLeft.Control = TimeLabeledEdit
+        EditLabel.AnchorSideLeft.Side = asrBottom
+        EditLabel.AnchorSideTop.Control = TimeLabeledEdit
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = TimeLabeledEdit
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 324
+        EditLabel.Height = 14
+        EditLabel.Top = 284
+        EditLabel.Width = 16
+        EditLabel.Caption = 'Sec'
+        EditLabel.ParentColor = False
+        LabelPosition = lpRight
+        ReadOnly = True
+        TabOrder = 5
+      end
+      object SaveButton: TButton
+        Left = 19
+        Height = 25
+        Top = 334
+        Width = 75
+        Caption = 'Save'
+        OnClick = SaveButtonClick
+        TabOrder = 6
+      end
+      object SaveOpenCheckBox: TCheckBox
+        Left = 112
+        Height = 23
+        Top = 338
+        Width = 159
+        Caption = 'Open file after saving'
+        TabOrder = 7
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Individual tree mode'
+      ClientHeight = 653
+      ClientWidth = 759
+      ImageIndex = 1
+      object ParamLabel: TLabel
+        Left = 3
+        Height = 14
+        Top = 3
+        Width = 84
+        Caption = 'Model parameters'
+        ParentColor = False
+      end
+      object Label17: TLabel
+        Left = 599
+        Height = 14
+        Top = 617
+        Width = 35
+        Caption = 'Volume'
+        ParentColor = False
+      end
+      object Label13: TLabel
+        Left = 566
+        Height = 14
+        Top = 553
+        Width = 68
+        Caption = 'Light captured'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 566
+        Height = 14
+        Top = 523
+        Width = 34
+        Caption = 'Results'
+        ParentColor = False
+      end
+      object LADistLabel: TLabel
+        Left = 3
+        Height = 14
+        Top = 528
+        Width = 105
+        Caption = 'Leaf angle distribution'
+        ParentColor = False
+      end
+      object Label1: TLabel
+        Left = 562
+        Height = 14
+        Top = 585
+        Width = 72
+        Caption = 'Photosynthesis'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 359
+        Height = 28
+        Top = 597
+        Width = 145
+        Caption = 'If c_P is empty a linear '#10'photosynthesis relation is used'
+        ParentColor = False
+        WordWrap = True
+      end
+      object IntervalValueListEditor: TValueListEditor
+        Left = 576
+        Height = 418
+        Top = 22
+        Width = 169
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        FixedCols = 0
+        RowCount = 16
+        TabOrder = 0
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        Strings.Strings = (
+          'Ellipsoid z (min)=-1'
+          'Ellipsoid z (max)=1'
+          'Ellipsoid psi (min*pi)=0'
+          'Ellipsoid psi (max*pi)=2'
+          'I psi (min*pi)=0'
+          'I psi (max*pi)=2'
+          'I_0 theta (min*pi)=0'
+          'I_0 theta (max*pi)=0.5'
+          'Kf psi (min*pi)=0'
+          'Kf psi (max*pi)=2'
+          'P psi (min*pi)=0'
+          'P psi (max*pi)=2'
+          'Crown AzWidth f_omega (*pi)=2'
+          'Veg AzWidth f_omega (*pi)=2'
+          'AzWidth i_omega_0 (*pi)=2'
+        )
+        TitleCaptions.Strings = (
+          'Integral (min/max)'
+          'Value'
+        )
+        ColWidths = (
+          106
+          59
+        )
+      end
+      object ModelValueListEditor: TValueListEditor
+        Left = 3
+        Height = 498
+        Top = 22
+        Width = 281
+        FixedCols = 0
+        RowCount = 19
+        TabOrder = 1
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        Strings.Strings = (
+          'Crown a=1'
+          'Crown b=1'
+          'Crown c=1'
+          'Rgap=0'
+          'Ht=5'
+          'Hb=4'
+          'Crown F=0.238732415'
+          'Crown class 15=10'
+          'Crown class 45=5'
+          'Crown class 75=1'
+          'a_L crown=1'
+          'Vegetation F=1'
+          'Vegetation class 15=10'
+          'Vegetation class 45=5'
+          'Vegetation class 75=1'
+          'a_L vegetation=1'
+          'Clouding const=2'
+          'Light horiz. plane=1000'
+        )
+        TitleCaptions.Strings = (
+          'Parameter'
+          'Value'
+        )
+        ColWidths = (
+          112
+          165
+        )
+      end
+      object AbsLightEdit: TEdit
+        Left = 640
+        Height = 31
+        Top = 545
+        Width = 103
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object Edit7: TEdit
+        Left = 640
+        Height = 31
+        Top = 608
+        Width = 103
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object IndTreeRunButton: TButton
+        Left = 3
+        Height = 25
+        Top = 586
+        Width = 281
+        Caption = 'Run'
+        OnClick = IndTreeRunButtonClick
+        TabOrder = 4
+      end
+      object RuntimeLabeledEdit: TLabeledEdit
+        Left = 235
+        Height = 31
+        Top = 617
+        Width = 49
+        BidiMode = bdRightToLeft
+        EditLabel.AnchorSideTop.Control = RuntimeLabeledEdit
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = RuntimeLabeledEdit
+        EditLabel.AnchorSideBottom.Control = RuntimeLabeledEdit
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 155
+        EditLabel.Height = 14
+        EditLabel.Top = 625
+        EditLabel.Width = 77
+        EditLabel.Caption = 'Running time (s) '
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        ParentBidiMode = False
+        ReadOnly = True
+        TabOrder = 5
+      end
+      object LADistComboBox: TComboBox
+        Left = 3
+        Height = 31
+        Top = 547
+        Width = 115
+        ItemHeight = 0
+        ItemIndex = 0
+        Items.Strings = (
+          'Classes'
+          'Continuous'
+          'Spherical'
+        )
+        Style = csDropDownList
+        TabOrder = 6
+        Text = 'Classes'
+      end
+      object PhotoSynthEdit: TEdit
+        Left = 640
+        Height = 31
+        Top = 577
+        Width = 103
+        TabOrder = 7
+      end
+      object PhotValueListEditor: TValueListEditor
+        Left = 355
+        Height = 264
+        Top = 319
+        Width = 169
+        FixedCols = 0
+        RowCount = 10
+        TabOrder = 8
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        Strings.Strings = (
+          'N=94'
+          'a_N=0.4'
+          'a_P=0,18'
+          'b_P=-2.09'
+          'c_P='
+          'a_R=0.0091'
+          'b_R=0.036'
+          'phi=0.05'
+          'theta=0.8'
+        )
+        TitleCaptions.Strings = (
+          'Parameter'
+          'Value'
+        )
+        ColWidths = (
+          77
+          88
+        )
+      end
+      object HorLeafCheckBox: TCheckBox
+        Left = 136
+        Height = 23
+        Top = 549
+        Width = 189
+        Caption = 'Horizontal leaf orientation'
+        TabOrder = 9
+        Visible = False
+      end
+    end
+  end
+  object GPValueListEditor: TValueListEditor
+    Left = 368
+    Height = 290
+    Top = 53
+    Width = 169
+    FixedCols = 0
+    RowCount = 13
+    TabOrder = 0
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    Strings.Strings = (
+      'Ellipsoid z=6'
+      'Ellipsoid r=6'
+      'Ellipsoid psi=6'
+      'I theta=6'
+      'I psi=6'
+      'I_0 theta=6'
+      'Kf theta (*LAClasses)=3'
+      'Kf psi=6'
+      'I_L theta=6'
+      'I_L psi=6'
+      'P theta (*LAClasses)=3'
+      'P psi=6'
+    )
+    TitleCaptions.Strings = (
+      'Integral'
+      'Gaussian points'
+    )
+    ColWidths = (
+      77
+      77
+    )
+  end
+  object ExitButton: TButton
+    Left = 703
+    Height = 25
+    Top = 693
+    Width = 75
+    Caption = 'Exit'
+    OnClick = ExitButtonClick
+    TabOrder = 2
+  end
+  object AboutButton: TButton
+    Left = 616
+    Height = 25
+    Top = 693
+    Width = 75
+    Caption = 'About'
+    OnClick = AboutButtonClick
+    TabOrder = 3
+  end
+  object OpenDialog: TOpenDialog
+    Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
+    left = 8
+    top = 695
+  end
+  object SaveOpenDialog: TOpenDialog
+    Title = 'Save'
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofEnableSizing]
+    left = 40
+    top = 695
+  end
+end
