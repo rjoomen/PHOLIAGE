@@ -11,15 +11,13 @@ uses
   Quadratic in 'Quadratic.pas',
   UExcel in 'UExcel.pas',
   Vector in 'Vector.pas',
-  uMainForm in 'uMainForm.pas' {MainForm},
-  About in 'About.pas' {AboutBox};
+  uMainForm in 'uMainForm.pas' {MainForm};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
-  Application.CreateForm(TAboutBox, AboutBox);
   Application.Run;
 end.
 

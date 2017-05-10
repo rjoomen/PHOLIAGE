@@ -53,8 +53,6 @@ type
         SaveOpenCheckBox: TCheckBox;
         LADistComboBox: TComboBox;
         LADistLabel: TLabel;
-        ExitButton: TButton;
-        AboutButton: TButton;
         PhotoSynthEdit: TEdit;
         Label1: TLabel;
         PhotValueListEditor: TValueListEditor;
@@ -68,8 +66,6 @@ type
         procedure MainRunButtonClick(Sender: TObject);
         procedure SaveButtonClick(Sender: TObject);
         procedure FormCreate(Sender: TObject);
-        procedure ExitButtonClick(Sender: TObject);
-        procedure AboutButtonClick(Sender: TObject);
     public
         property version: string read fVersion;
     end;
@@ -82,7 +78,7 @@ implementation
 {$R *.lfm}
 
 uses
-  Model_Absorption, GaussInt, About, DataRW,
+  Model_Absorption, GaussInt, DataRW,
   strutils, sysutils,
   fileinfo, // fileinfo reads exe resources as long as you register the appropriate units
   winpeimagereader, {need this for reading exe info}
@@ -91,11 +87,6 @@ uses
 
 var
     Plot       : TPlot;
-
-procedure TMainForm.AboutButtonClick(Sender: TObject);
-begin
-    AboutBox.ShowModal;
-end;
 
 procedure TMainForm.DoGP(Ellipsoid  : TEllipsoid);
 // Initialise the gaussion integration points
@@ -147,11 +138,6 @@ begin
     Ellipsoid.Ring.Ellipse.Env.Vegetation.F.AzWidth:=StrToFloat(IntervalValueListEditor.Cells[1,14])*pi;
 //AzWidth i_omega_0 (*pi)=2
     Ellipsoid.Ring.Ellipse.Env.Light.AzWidth:=StrToFloat(IntervalValueListEditor.Cells[1,15])*pi;
-end;
-
-procedure TMainForm.ExitButtonClick(Sender: TObject);
-begin
-    Application.Terminate;
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
@@ -321,6 +307,7 @@ begin
     OpenDialog.Filter:='Microsoft Excel files (*.xls)|*.XLS;*.xls|CSV files (*.csv)|*.CSV;*.csv';
     OpenDialog.Title:='Open';
     OpenDialog.FileName:='';
+    OpenDialog.InitialDir:=GetCurrentDir;
     try
         // Prevent user action during calculations
         PageControl1.Enabled:=false;
@@ -353,6 +340,7 @@ begin
     SaveOpenDialog.Filter:='Microsoft Excel files (*.xls)|*.XLS;*.xls';
     SaveOpenDialog.Title:='Save';
     SaveOpenDialog.FileName:='';
+    SaveOpenDialog.InitialDir:=GetCurrentDir;
     if SaveOpenDialog.Execute then
     begin
         WriteExcel:=TWriteExcel.Create;

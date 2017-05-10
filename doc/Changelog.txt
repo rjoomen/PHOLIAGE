@@ -1,0 +1,61 @@
+0.0.1.
+-First implementation
+
+0.0.2
+-Added unit tests.
+-Added a skeleton TLight class for calculation of light on each point p.
+-Added Gaussian integration in unit Model_Integration.
+
+0.0.3
+-Gaussian integration over spherical transformation of ellipsoid.
+
+0.0.4
+-Intersection with gap walls calculated with gap as cylinder.
+
+0.1.5
+-All formulas implemented.
+
+0.1.6
+-All integration intervals are now variables and set in the create methods so
+ they can be changed at runtime.
+
+0.1.7
+-Integrations with f_omega now split over leaf angle classes.
+
+0.2.0
+-Major light absorption calculation change: now uses Kf.
+-Error in TVegetation.pathlength corrected: beam through gap upward for
+ a point p below the vegetation with no vegetation intersection erronously
+ still yielded a path length instead of 0.
+
+0.2.1
+-Error handling when reading excel files (ReadExcelPlot.ReadData) improved.
+-Error in photosynthesis calculations found (in analytical model and
+ program), will be corrected in next version.
+
+0.3.0
+-Photosynthesis calculations corrected.
+-Class TEnvironment introduced, holding Assimilation and Absorption and the
+ Crown, Vegetation, Light and Photosynthesis details.
+-Introduced an extra identifier 'id' for the Kf_table to distinguish between calls
+ out of I() and out of P(). Otherwise lookup is incorrect.
+-Integration settings (interval/number of points) for I_L and P.
+
+0.3.1
+-Spelling error corrected in error message.
+-Changed tab sheet titles.
+
+0.4.x
+-Moved to Delphi 2007?
+
+0.5.x
+-Initial work on an extension for cut lanes.
+-Improved behaviour of progress bar and timer.
+-Changed String type in UExcel to AnsiString.
+
+0.6.0
+-Ported to Lazarus/Freepascal.
+-Removed incomplete lane-based stuff.
+-Removed Windows/Delphi-specific multithreading code.
+-Removed About and Exit buttons.
+-Initial directories for Open and Save set to working directory.
