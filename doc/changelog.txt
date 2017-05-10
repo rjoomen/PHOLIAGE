@@ -53,9 +53,9 @@
 -Improved behaviour of progress bar and timer.
 -Changed String type in UExcel to AnsiString.
 
-0.6.0
+1.0.0
 -Ported to Lazarus/Freepascal.
--Removed incomplete lane-based stuff.
+-Removed incomplete lane-based code.
 -Removed Windows/Delphi-specific multithreading code.
 -Removed About and Exit buttons.
 -Initial directories for Open and Save set to working directory.

@@ -16,7 +16,7 @@
     </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <RevisionNr Value="6"/>
+      <MajorVersionNr Value="1"/>
       <StringTable FileDescription="Photosynthesis and Light Absorption Model" ProductName="PHOLIAGE" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="2">
@@ -26,8 +26,8 @@
           <Version Value="11"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <Libraries Value="/usr/lib/gcc/x86_64-redhat-linux/6.3.1"/>
-            <UnitOutputDirectory Value="output"/>
+            <Libraries Value="/usr/lib/gcc/x86_64-redhat-linux/6.3.1/"/>
+            <UnitOutputDirectory Value="output/$(BuildMode)/$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
             <SyntaxOptions>
@@ -70,7 +70,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="PHOLIAGE.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -106,14 +106,18 @@
         <Filename Value="Vector.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="GaussInt.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <Libraries Value="/usr/lib/gcc/x86_64-redhat-linux/6.3.1"/>
-      <UnitOutputDirectory Value="output"/>
+      <Libraries Value="/usr/lib/gcc/x86_64-redhat-linux/6.3.1/"/>
+      <UnitOutputDirectory Value="output/$(BuildMode)/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>

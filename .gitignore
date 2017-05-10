@@ -20,23 +20,21 @@
 # Lazarus local files (user-specific info)
 *.lps
 
-# Lazarus backups and unit output folders.
-# These can be changed by user in Lazarus/project options.
+# Lazarus backups and output folders.
+*.bak
 backup/
 doc/backup/
-*.bak
-
-# Application bundle for Mac OS
-*.app/
-
-# Binary outputs
+lib/
 output/
-# Old exe files
-old/
 
-# Temporary: data files directory (till I clean this up)
-Data Mark/
+# VSCode settings
+.vscode/
 
-# Temporary: old releases directory - need to convert to GitHub releases
+# Binaries of old versions for testing.
+EXE/
+
+# Releases are uploaded separately.
 releases/
-doc/
+
+# Platform-specific makefiles for producing releases
+makefile*

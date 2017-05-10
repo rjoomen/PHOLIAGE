@@ -23,8 +23,8 @@ object MainForm: TMainForm
     TabOrder = 1
     object Model: TTabSheet
       Caption = 'Data file mode'
-      ClientHeight = 655
-      ClientWidth = 761
+      ClientHeight = 653
+      ClientWidth = 759
       object SelectFileButton: TButton
         Left = 19
         Height = 25
@@ -36,7 +36,7 @@ object MainForm: TMainForm
       end
       object FilenameEdit: TEdit
         Left = 19
-        Height = 21
+        Height = 31
         Top = 53
         Width = 326
         BidiMode = bdRightToLeft
@@ -47,7 +47,7 @@ object MainForm: TMainForm
       end
       object CountLabeledEdit: TLabeledEdit
         Left = 19
-        Height = 21
+        Height = 31
         Top = 104
         Width = 85
         EditLabel.AnchorSideLeft.Control = CountLabeledEdit
@@ -55,8 +55,8 @@ object MainForm: TMainForm
         EditLabel.AnchorSideRight.Side = asrBottom
         EditLabel.AnchorSideBottom.Control = CountLabeledEdit
         EditLabel.Left = 19
-        EditLabel.Height = 13
-        EditLabel.Top = 88
+        EditLabel.Height = 14
+        EditLabel.Top = 87
         EditLabel.Width = 85
         EditLabel.Caption = 'Number of plants'
         EditLabel.ParentColor = False
@@ -94,9 +94,9 @@ object MainForm: TMainForm
         EditLabel.AnchorSideBottom.Control = TimeLabeledEdit
         EditLabel.AnchorSideBottom.Side = asrBottom
         EditLabel.Left = 324
-        EditLabel.Height = 13
-        EditLabel.Top = 285
-        EditLabel.Width = 19
+        EditLabel.Height = 14
+        EditLabel.Top = 284
+        EditLabel.Width = 16
         EditLabel.Caption = 'Sec'
         EditLabel.ParentColor = False
         LabelPosition = lpRight
@@ -114,17 +114,17 @@ object MainForm: TMainForm
       end
       object SaveOpenCheckBox: TCheckBox
         Left = 112
-        Height = 19
+        Height = 23
         Top = 338
-        Width = 120
+        Width = 159
         Caption = 'Open file after saving'
         TabOrder = 7
       end
     end
     object TabSheet2: TTabSheet
       Caption = 'Individual tree mode'
-      ClientHeight = 655
-      ClientWidth = 761
+      ClientHeight = 653
+      ClientWidth = 759
       ImageIndex = 1
       object ParamLabel: TLabel
         Left = 3
@@ -313,7 +313,7 @@ object MainForm: TMainForm
         Height = 21
         Top = 547
         Width = 115
-        ItemHeight = 13
+        ItemHeight = 0
         ItemIndex = 0
         Items.Strings = (
           'Classes'
@@ -404,7 +404,7 @@ object MainForm: TMainForm
     )
     ColWidths = (
       77
-      88
+      77
     )
   end
   object OpenDialog: TOpenDialog

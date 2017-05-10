@@ -7,7 +7,6 @@ uses
   Model_Absorption in 'Model_Absorption.pas',
   Paths in 'Paths.pas',
   GaussInt in 'GaussInt.pas',
-  //Plane in 'Plane.pas',
   Quadratic in 'Quadratic.pas',
   UExcel in 'UExcel.pas',
   Vector in 'Vector.pas',
