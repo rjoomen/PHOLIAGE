@@ -42,6 +42,7 @@ function TQuadratic.Solve(const Positive : Boolean) : Double;
 var
    result1, result2 : Double;
 begin
+    result := 0;
     if Discriminant>=0 then
     begin
         result1 := ( -t_beta + sqrt(t_Discriminant)) / (2 * t_alpha);
